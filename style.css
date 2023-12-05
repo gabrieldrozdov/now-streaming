@@ -1,0 +1,182 @@
+@font-face {
+	font-family: 'Akzidenz Regular';
+	src: url('assets/fonts/AkzidGroStdReg.otf');
+}
+@font-face {
+	font-family: 'Akzidenz Medium Italic';
+	src: url('assets/fonts/AkzidGroStdMedIta.otf');
+}
+@font-face {
+	font-family: 'Akzidenz Super';
+	src: url('assets/fonts/AkzidGroStdSup.otf');
+}
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+.container {
+	width: 100vw;
+	height: 100dvh;
+	position: relative;
+}
+
+/* Streams */
+.streams {
+	top: 0;
+	left: 0;
+	position: fixed;
+	height: 100dvh;
+	display: flex;
+	overflow-x: scroll;
+	flex-wrap: nowrap;
+	align-items: center;
+	padding: 100px 10px;
+	height: 100%;
+	white-space: nowrap;
+	width: fit-content;
+	opacity: 0;
+	animation: streams-in .5s .5s forwards;
+}
+.streams::-webkit-scrollbar {
+	display: none;
+}
+@keyframes streams-in {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+.stream {
+	padding-right: 10px;
+	flex-shrink: 0;
+	display: flex;
+	gap: 10px;
+	flex-direction: column;
+	align-items: end;
+}
+.stream video {
+	height: calc(100dvh - 240px);
+	width: 100%;
+	display: block;
+	background: linear-gradient(to bottom, rgba(0,0,0,.05) 0%, rgba(0,0,0,.05) 100%), url('assets/loading.gif');
+	background-position: center;
+	background-repeat: repeat, no-repeat;
+	background-size: 300px;
+}
+.stream figcaption {
+	flex-shrink: 0;
+	text-transform: uppercase;
+}
+.date1 {
+	font-family: 'Akzidenz Regular', sans-serif;
+	font-size: 12px;
+}
+.date2 {
+	font-family: 'Akzidenz Medium Italic', sans-serif;
+	font-size: 14px;
+}
+
+/* Header */
+header {
+	position: fixed;
+	left: 40px;
+	top: 60px;
+	z-index: 9;
+}
+.title {
+	text-transform: uppercase;
+	font-size: 18px;
+}
+.title a {
+	color: black;
+	text-decoration: none;
+}
+.title a:hover {
+	opacity: .5;
+}
+.title a:active {
+	opacity: .25;
+}
+.title1 {
+	font-family: 'Akzidenz Regular', sans-serif;
+}
+.title2 {
+	font-family: 'Akzidenz Medium Italic', sans-serif;
+}
+
+/* Footer */
+footer {
+	position: fixed;
+	right: 40px;
+	bottom: 60px;
+	text-align: right;
+	z-index: 9;
+}
+footer a {
+	font-family: 'Akzidenz Regular', sans-serif;
+	text-transform: uppercase;
+	font-size: 18px;
+	color: black;
+	text-decoration: none;
+}
+footer a:hover {
+	opacity: .5;
+}
+footer a:active {
+	opacity: .25;
+}
+
+/* About page */
+.about {
+	top: 0;
+	right: 0;
+	position: fixed;
+	height: 100dvh;
+	max-width: 1000px;
+	width: 100%;
+	padding: 100px 40px;
+	overflow-y: scroll;
+	height: 100%;
+}
+.about-title {
+	width: 300px;
+	font-family: 'Akzidenz Super', sans-serif;
+	text-transform: uppercase;
+	font-size: 18px;
+	text-align: right;
+	margin-bottom: 2em;
+}
+.about-subtitle {
+	width: 300px;
+	text-align: right;
+	font-size: 18px;
+	font-family: 'Akzidenz Medium Italic', sans-serif;
+}
+.about-text {
+	padding-left: 340px;
+	font-size: 18px;
+	columns: 2;
+	font-family: 'Akzidenz Regular', sans-serif;
+}
+.about-text p {
+	margin-bottom: 1em;
+}
+@media only screen and (max-width: 850px) {
+	.about-title {
+		margin-top: 1em;
+		width: 100%;
+		text-align: left;
+	}
+	.about-subtitle {
+		width: 100%;
+		margin-bottom: 1em;
+		text-align: left;
+	}
+	.about-text {
+		padding-left: 0;
+		columns: 1;
+	}
+}
